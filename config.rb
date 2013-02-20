@@ -33,6 +33,8 @@ activate :deploy do |deploy|
   # deploy.branch = "gh-pages" # uses 'gh-pages' by default
 end
 
+activate :directory_indexes
+
 
 set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'

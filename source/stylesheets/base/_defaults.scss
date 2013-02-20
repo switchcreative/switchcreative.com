@@ -1,7 +1,11 @@
 // Basic Elements
 body {
   font-family: $typeface-sans;
+  font-size: 100%;
   text-shadow: 1px 1px 1px transparent;
+  @include media($breakpoint-desktop) {
+    font-size: 120%;
+  }
 }
 
 a {

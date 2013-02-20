@@ -44,29 +44,31 @@
   
   
   %body
-    /[if lt IE 9]
-      .wrap.outdated-browser
-        %div
-          %p
-            %a.close{ href: "#" } x
-            You are using an <strong>outdated</strong> browser. Please 
-            %a{ href: "http://browsehappy.com/", target: '_blank' } upgrade your browser or
-            %a{ href: "http://www.google.com/chromeframe/?redirect=true", target: '_blank' } activate Google Chrome Frame
-            to improve your experience.
+    / /[if lt IE 9]
+    /   .wrap.outdated-browser
+    /     %div
+    /       %p
+    /         %a.close{ href: "#" } x
+    /         You are using an <strong>outdated</strong> browser. Please 
+    /         %a{ href: "http://browsehappy.com/", target: '_blank' } upgrade your browser or
+    /         %a{ href: "http://www.google.com/chromeframe/?redirect=true", target: '_blank' } activate Google Chrome Frame
+    /         to improve your experience.
 
 
-    %header#layout-header
-      .logo
-        = link_to "/" do
-          = image_tag "logo.png", title: "Loaded For Bear", alt: "Loaded For Bear"
-      / %nav
-      /   = link_to icon("e000"), "/contact"
+    %header#l-header
+      .l-constrained
+        .header-inner
+          .header-logo
+            = link_to "/" do
+              = image_tag "logo.png", title: "Loaded For Bear", alt: "Loaded For Bear"
+          %nav.m-menu
+            = link_to icon("e000"), "/contact"
       
       
     = yield
     
     
-    %footer.footer
+    %footer#l-footer
     
     
     

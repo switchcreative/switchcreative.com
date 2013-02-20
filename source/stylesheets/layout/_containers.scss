@@ -1,17 +1,17 @@
 // General Containers
 
-.layout-constrained {
+.l-constrained {
   @include outer-container;
   padding: 0 $page-gutter;
 }
 
-.layout-main {
+.l-main {
   @include media($breakpoint-ipad) {
     @include span-columns(8);
   }
 }
 
-.layout-sidebar {
+.l-sidebar {
   @include media($breakpoint-ipad) {
     @include span-columns(4);
   }

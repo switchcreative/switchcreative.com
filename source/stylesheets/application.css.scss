@@ -3,6 +3,7 @@
 @import "icomoon";
 
 // Mixins
+@import "mixins/ie";
 
 // Base
 @import "base/settings";
@@ -18,5 +19,7 @@
 @import "layout/containers";
 
 // Modules
+@import "modules/menu";
+@import "modules/portfolio";
 
 // States
