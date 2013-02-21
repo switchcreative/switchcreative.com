@@ -16,3 +16,9 @@
     @include span-columns(4);
   }
 }
+
+.l-content {
+  @include outer-container;
+  padding: 0 ($page-gutter + 1em);
+  margin: 1em auto;
+}

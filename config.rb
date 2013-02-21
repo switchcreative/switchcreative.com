@@ -26,11 +26,20 @@ helpers ApplicationHelper
 #   @which_fake_page = "Rendering a fake page with a variable"
 # end
 
+Time.zone = "America/Chicago"
 
 activate :deploy do |deploy|
   deploy.method = :git
   # deploy.remote = "origin" # uses 'origin' by default
   # deploy.branch = "gh-pages" # uses 'gh-pages' by default
+end
+
+activate :blog do |blog|
+  blog.default_extension = ".md"
+  blog.sources   = ":title"
+  blog.layout    = "portfolio_layout"
+  blog.prefix    = "portfolio"
+  blog.permalink = ":title"
 end
 
 activate :directory_indexes

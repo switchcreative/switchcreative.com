@@ -22,6 +22,13 @@ module ApplicationHelper
   end
 
 
+  # Portfolio Image
+  # 
+  def portfolio_image data, image
+    "portfolio/#{data.title}/#{image}"
+  end
+  
+
   # Display IcoMoon font icon
   # 
   def icon key
