@@ -1,9 +1,9 @@
 ---
-title: cityhouse
-date: 2013-02-21 14:00
+title: city-house
+date: 2013-02-18 14:00
 published: true
+featured_image: LFB_Titles-CityHouse.jpg
 images:
-  - LFB_Titles-CityHouse.jpg
   - LFB_Titles-CityHouse2.jpg
   - LFB_Titles-CityHouse3.jpg
   - LFB_Titles-CityHouse4.jpg

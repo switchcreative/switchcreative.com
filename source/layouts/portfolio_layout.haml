@@ -1,20 +1,13 @@
 = wrap_layout :layout do
-  / = current_page.data
   .l-constrained
     .m-portfolio-image
-      - if current_page.data.images && current_page.data.images.size > 0
-        - if current_page.data.featured_image
-          = image_tag portfolio_image(current_page.data, current_page.data.featured_image)
-        - else
-          = image_tag portfolio_image(current_page.data, current_page.data.images[0])
-
+      - if has_images(current_page.data)
+        = async_image image_path(featured_image(current_page.data))
       - else
-        = image_tag "LFB-mountain-range_cropped.jpg"
+        = async_image image_path("LFB-mountain-range_cropped.jpg")
 
     .l-content
       .m-content= yield
 
-    - if current_page.data.images && current_page.data.images.size > 0
-      - image_set = current_page.data.featured_image ? current_page.data.images : current_page.data.images.drop(1)
-      - image_set.each do |img|
-        .m-portfolio-image= image_tag portfolio_image(current_page.data, img)
+    - image_set(current_page.data).each do |img|
+      .m-portfolio-image= async_image image_path(portfolio_image(current_page.data, img))

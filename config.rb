@@ -40,6 +40,10 @@ activate :blog do |blog|
   blog.layout    = "portfolio_layout"
   blog.prefix    = "portfolio"
   blog.permalink = ":title"
+  # Pagination
+  blog.paginate = true
+  blog.per_page = 10
+  # blog.page_link = "p:num"
 end
 
 activate :directory_indexes

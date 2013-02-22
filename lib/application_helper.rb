@@ -22,10 +22,56 @@ module ApplicationHelper
   end
 
 
+  # Has Images
+  # 
+  def has_images data
+    if data.images && data.images.size > 0
+      true
+    else
+      false
+    end
+  end
+  
+
   # Portfolio Image
   # 
   def portfolio_image data, image
     "portfolio/#{data.title}/#{image}"
+  end
+  
+
+  # Featured Image
+  # 
+  def featured_image data
+    if data.featured_image
+      portfolio_image(data, data.featured_image)
+    else
+      portfolio_image(data, data.images[0])
+    end
+  end
+  
+
+  # Image Set
+  # 
+  def image_set data
+    if data.images && data.images.size > 0
+      if data.featured_image
+        data.images
+      else
+        data.images.drop(1)
+      end
+    else
+      []
+    end
+  end
+
+
+  # Markup for async images with noscript fallback
+  # 
+  def async_image img
+    el =  "<div data-behavior='delayedImage' data-src='#{img}' style='display:none;'></div>"
+    el += "<noscript><img src='#{img}'></noscript>"
+    el
   end
   
 
