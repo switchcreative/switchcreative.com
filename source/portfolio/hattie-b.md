@@ -1,5 +1,7 @@
 ---
-title: hattie-b
+title: Hattie B's
+slug: hattie-b
+color: rgba(219,55,31,0.7)
 date: 2013-02-22 11:00
 published: true
 featured_image: LFB_Titles-HattieB.jpg

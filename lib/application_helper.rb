@@ -36,7 +36,7 @@ module ApplicationHelper
   # Portfolio Image
   # 
   def portfolio_image data, image
-    "portfolio/#{data.title}/#{image}"
+    "portfolio/#{data.slug}/#{image}"
   end
   
 
