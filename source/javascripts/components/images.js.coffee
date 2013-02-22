@@ -27,25 +27,24 @@ $.fn.asyncImageLoad = ->
     $this.show().css("min-height", "3em")
     spinner = new Spinner(spinnerOpts).spin($this[0])
 
-    $(document).queue (docNextQueue) ->
-      src = $this.data("src")
-      if src
-        $img = $("<img>")
-        loaded = $img.attr("src", src).imagesLoaded()
-        loaded.progress (isBroken) ->
-          if isBroken
-            $this.fadeOut(500)
-            docNextQueue()
-          else
-            $img.hide()
+    src = $this.data("src")
+    if src
+      $img = $("<img>")
+      loaded = $img.attr("src", src).imagesLoaded()
+      loaded.progress (isBroken) ->
+        if isBroken
+          $this.fadeOut(500)
+        else
+          $img.hide()
+          $(document).queue (nextDocQueue) ->
             $this.replaceWith($img).queue (next) ->
               $img.fadeIn(1000)
-              docNextQueue()
-          showHeader() if index is 0
+              nextDocQueue()
+        showHeader() if index is 0
 
 # Fade in header
 showHeader = ->
-  $header.delay(500).fadeIn(1500)
+  $header.delay(500).fadeIn(1700)
 
 jQuery ->
   # Hide header, fade-in immediately
