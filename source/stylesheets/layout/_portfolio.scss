@@ -1,2 +1,5 @@
 .l-portfolio {
+  @include outer-container;
+  padding: 0 $page-gutter;
+  margin: $page-gutter auto 0;
 }

@@ -1,7 +1,7 @@
 ---
 title: City House
 slug: city-house
-color: rgba(248,152,40,0.7)
+color: rgba(248,152,40,0.5)
 date: 2013-02-18 14:00
 published: true
 featured_image: LFB_Titles-CityHouse.jpg

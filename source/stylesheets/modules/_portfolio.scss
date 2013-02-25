@@ -1,5 +1,5 @@
 .m-portfolio-image {
-  margin-bottom: 0.25em;
+  margin-bottom: $page-gutter;
 }
 
 .m-portfolio-preview {
@@ -16,7 +16,7 @@
     filter: alpha(opacity=0);
     opacity: 0;
     background: #555;
-    background: rgba(50,50,50,0.7);
+    background: rgba(50,50,50,0.5);
     color: $white;
     @include transition(visibility 0s ease-in-out 0.4s, opacity 0.4s ease-in-out);
 
@@ -25,7 +25,10 @@
       bottom: 1em;
       left: 0;
       width: 100%;
+      font-family: $typeface-serif;
+      font-weight: normal;
       text-align: center;
+      text-transform: uppercase;
     }
   }
 

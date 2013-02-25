@@ -1,6 +1,6 @@
 #l-header {
   position: fixed;
-  top: 0;
+  top: $page-gutter;
   left: 0;
   z-index: 10;
   width: 100%;
@@ -8,6 +8,7 @@
   .header-inner {
     @include outer-container;
     padding: 0.5em;
+    // background: rgba(25,25,25,0.25);
   }
 
   .header-logo {

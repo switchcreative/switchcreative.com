@@ -1,7 +1,7 @@
 ---
 title: Victory Bicycle Studio
 slug: victory-bicycle-studio
-color: rgba(65,196,221,0.7)
+color: rgba(65,196,221,0.5)
 date: 2013-02-21 13:00
 published: true
 featured_image: TitleScreens_VBS.jpg
