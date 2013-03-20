@@ -1,5 +1,41 @@
+// Portfolio
 .l-portfolio {
   @include outer-container;
   padding: 0 $page-gutter;
   margin: $page-gutter auto 0;
+}
+
+// Portfolio Header
+.l-portfolio-header {
+  @include row;
+  margin-bottom: 1.5em;
+
+  .m-portfolio-logo {
+    img {
+      width: 60%;
+      margin: 0 auto 2em;
+    }
+  }
+
+  .m-content {
+    padding: 0 0.5em;
+  }
+
+  @include media-ie($breakpoint-ipad) {
+    margin-bottom: 2.5em;
+    
+    .m-portfolio-logo {
+      @include span-columns(4);
+      border-right: 3px solid $white;
+
+      img {
+        width: 75%;
+        margin-top: 2em;
+      }
+    }
+
+    .m-content {
+      @include span-columns(8);
+    }
+  }
 }

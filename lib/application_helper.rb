@@ -55,11 +55,7 @@ module ApplicationHelper
   # 
   def image_set data
     if data.images && data.images.size > 0
-      if data.featured_image
-        data.images
-      else
-        data.images.drop(1)
-      end
+      data.images
     else
       []
     end

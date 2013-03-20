@@ -1,28 +1,12 @@
 #l-header {
   position: fixed;
-  top: $page-gutter;
+  top: 0;
   left: 0;
   z-index: 10;
   width: 100%;
 
-  .header-inner {
-    @include outer-container;
-    padding: 0.5em;
-    // background: rgba(25,25,25,0.25);
-  }
-
   .header-logo {
     float: left;
-    width: 4em;
-  }
-
-  .m-menu {
-    float: right;
-  }
-
-  @include media-ie($breakpoint-ipad) {
-    .header-logo {
-      width: 7em;
-    }
+    width: 1.5em;
   }
 }

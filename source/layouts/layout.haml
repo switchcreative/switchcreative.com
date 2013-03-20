@@ -6,7 +6,7 @@
   
   %head
     %meta(charset="utf-8")
-    %title= [yield_content(:title), "Switch"].reject(&:blank?).join(' | ')
+    %title= [yield_content(:title), "switch"].reject(&:blank?).join(' | ')
     
     -# koko wa general meta
     %meta{name: "description", content: "FIXME: APPLICATION DESCRIPTION"}
@@ -57,12 +57,9 @@
 
     %header#l-header
       .l-constrained
-        .header-inner
-          .header-logo
-            = link_to "/" do
-              = image_tag "logo.png", title: "Switch", alt: "Switch"
-          %nav.m-menu
-            = link_to icon("e000"), "/contact"
+        .header-logo
+          = link_to "/" do
+            = image_tag "logo.png", title: "switch", alt: "switch"
       
       
     = yield
