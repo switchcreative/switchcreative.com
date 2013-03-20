@@ -6,7 +6,7 @@
   
   %head
     %meta(charset="utf-8")
-    %title= [yield_content(:title), "Loaded For Bear"].reject(&:blank?).join(' | ')
+    %title= [yield_content(:title), "Switch"].reject(&:blank?).join(' | ')
     
     -# koko wa general meta
     %meta{name: "description", content: "FIXME: APPLICATION DESCRIPTION"}
@@ -60,7 +60,7 @@
         .header-inner
           .header-logo
             = link_to "/" do
-              = image_tag "logo.png", title: "Loaded For Bear", alt: "Loaded For Bear"
+              = image_tag "logo.png", title: "Switch", alt: "Switch"
           %nav.m-menu
             = link_to icon("e000"), "/contact"
       
