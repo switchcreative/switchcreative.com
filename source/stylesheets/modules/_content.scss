@@ -1,10 +1,16 @@
 .m-content {
   h1 {
-    font-family: $typeface-serif;
-    font-size: 1.625em;
+    margin-bottom: 0.125em;
+    font-family: $typeface-title;
+    font-size: 4.25em;
     font-weight: normal;
+    line-height: 1.2;
     text-transform: uppercase;
     text-align: center;
+  }
+
+  p {
+    line-height: 1.5;
   }
 
   @include media-ie($breakpoint-ipad) {

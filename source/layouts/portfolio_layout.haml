@@ -2,22 +2,22 @@
   - if current_page.data.background_color
     :css
       body {
-        background-color: #{current_page.data.background_color}
+        background-color: #{current_page.data.background_color};
       }
   - if current_page.data.background_image
     :css
       body {
-        background-image: #{current_page.data.background_image}
+        background-image: url(#{image_path portfolio_image(current_page.data, current_page.data.background_image)});
       }
   - if current_page.data.background_repeat
     :css
       body {
-        background-repeat: #{current_page.data.background_repeat}
+        background-repeat: #{current_page.data.background_repeat};
       }
   - if current_page.data.color
     :css
       body {
-        color: #{current_page.data.color}
+        color: #{current_page.data.color};
       }
 
   .l-portfolio
