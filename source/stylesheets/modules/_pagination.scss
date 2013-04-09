@@ -1,0 +1,38 @@
+
+
+// Pagination Button
+.m-pagination-btn {
+  display: block;
+  padding: 1em 0;
+  font-family: $typeface-title;
+  font-size: 2em;
+  text-align: center;
+  text-transform: uppercase;
+
+  &:hover {
+    background: rgba(0,0,0,0.25);
+  }
+
+  .pagination-btn-inner {
+    padding: 1em 0;
+    border-color: $white;
+    border-style: solid;
+    border-width: 0;
+  }
+
+  @include media-ie($breakpoint-ipad) {
+    padding: 0.75em 0;
+    font-size: 4em;
+
+    .pagination-btn-inner {
+      padding: 0.5em 0;
+    }
+
+  }
+
+  @include media-ie($breakpoint-desktop) {
+    padding: 0.5em 0;
+    font-size: 5em;
+  }
+
+}

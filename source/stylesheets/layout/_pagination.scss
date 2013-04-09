@@ -1,0 +1,28 @@
+// Pagination Section
+.l-pagination {
+  @include clearfix;
+
+  .m-pagination-btn {
+    width: 50%;
+
+    &.prev {
+      float: left;
+
+      .pagination-btn-inner {
+        border-right-width: 2px;
+      }
+
+    }
+
+    &.next {
+      float: right;
+
+      .pagination-btn-inner {
+        border-left-width: 2px;
+      }
+
+    }
+    
+  }
+
+}

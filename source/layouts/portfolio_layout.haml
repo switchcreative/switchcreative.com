@@ -27,6 +27,17 @@
           = image_tag portfolio_image(current_page.data, current_page.data.logo)
       .m-content= yield
 
+    -# Portfolio Images
     - if current_page.data.images && current_page.data.images.size > 0
-      - current_page.data.images.each do |img|
-        .m-portfolio-image= async_image image_path(portfolio_image(current_page.data, img))
+      .m-portfolio-images
+        - current_page.data.images.each do |img|
+          .m-portfolio-image= async_image image_path(portfolio_image(current_page.data, img))
+
+    -# Pagination
+    .l-pagination
+      - if current_page.previous_article
+        = link_to current_page.previous_article, class: "m-pagination-btn prev" do
+          .pagination-btn-inner < Prev
+      - if current_page.next_article
+        = link_to current_page.next_article, class: "m-pagination-btn next" do
+          .pagination-btn-inner Next >
