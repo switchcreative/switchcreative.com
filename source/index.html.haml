@@ -2,6 +2,7 @@
 pageable: true
 ---
 
+-# Portfolio
 %section#portfolio.l-portfolio
   - page_articles.select {|a| has_images(a.data) }.each do |article|
 
@@ -11,5 +12,14 @@ pageable: true
         .m-portfolio-image
           = async_image image_path(featured_image(article.data))
 
-        .portfolio-preview-overlay{ style: ("background:#{article.data.color};" if article.data.color) }
+        .portfolio-preview-overlay{ style: ("background:#{article.data.hover_color};" if article.data.color) }
           %h1= article.data.title
+
+-# Pagination
+.l-pagination
+  - if prev_page
+    = link_to prev_page, class: "m-pagination-btn prev" do
+      .pagination-btn-inner < Prev
+  - if next_page
+    = link_to next_page, class: "m-pagination-btn next" do
+      .pagination-btn-inner Next >

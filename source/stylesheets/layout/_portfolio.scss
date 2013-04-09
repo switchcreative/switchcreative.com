@@ -8,6 +8,7 @@
 // Portfolio Header
 .l-portfolio-header {
   @include row;
+  margin-top: 3em;
   margin-bottom: 1.5em;
 
   .m-portfolio-logo {
@@ -22,11 +23,12 @@
   }
 
   @include media-ie($breakpoint-ipad) {
+    margin-top: 3.5em;
     margin-bottom: 2.5em;
     
     .m-portfolio-logo {
       @include span-columns(4);
-      border-right: 3px solid $white;
+      border-right: 3px solid $text-color;
 
       img {
         width: 75%;
@@ -37,5 +39,7 @@
     .m-content {
       @include span-columns(8);
     }
+
   }
+
 }

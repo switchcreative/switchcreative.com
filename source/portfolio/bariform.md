@@ -1,7 +1,7 @@
 ---
 title: Bariform
 slug: bariform
-date: 2013-02-20 15:00
+date: 2013-02-10 15:00
 published: true
 featured_image: LFB_Titles-Bariform.jpg
 images:

@@ -1,4 +1,6 @@
 = wrap_layout :layout do
+  
+  -# Custom Styles
   - if current_page.data.background_color
     :css
       body {
@@ -19,13 +21,21 @@
       body {
         color: #{current_page.data.color};
       }
+      .m-portfolio-logo,
+      .pagination-btn-inner {
+        border-color: #{current_page.data.color} !important;
+      }
 
+
+  -# Portfolio
   .l-portfolio
     .l-portfolio-header
       - if current_page.data.logo
         .m-portfolio-logo
           = image_tag portfolio_image(current_page.data, current_page.data.logo)
-      .m-content= yield
+        .m-content= yield
+      - else
+        .m-content.no-logo= yield
 
     -# Portfolio Images
     - if current_page.data.images && current_page.data.images.size > 0

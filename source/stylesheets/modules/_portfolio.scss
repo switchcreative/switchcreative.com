@@ -21,7 +21,7 @@
       bottom: 1em;
       left: 0;
       width: 100%;
-      font-family: $typeface-serif;
+      font-family: $typeface-title;
       font-weight: normal;
       text-align: center;
       text-transform: uppercase;
@@ -34,4 +34,17 @@
     opacity: 1;
     @include transition-delay(0s);
   }
+
+  @include media-ie($breakpoint-ipad) {
+    h1 {
+      font-size: 2.5em;
+    }
+  }
+
+  @include media-ie($breakpoint-desktop) {
+    h1 {
+      font-size: 3em;
+    }
+  }
+
 }
