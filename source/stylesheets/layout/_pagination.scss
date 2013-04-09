@@ -1,5 +1,6 @@
 // Pagination Section
 .l-pagination {
+  @include outer-container;
   @include clearfix;
 
   .m-pagination-btn {
