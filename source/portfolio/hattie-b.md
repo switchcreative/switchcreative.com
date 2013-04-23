@@ -3,7 +3,7 @@ title: Hattie B's
 slug: hattie-b
 background_color: "#f90018"
 background_image: hattieb-bg.jpg
-background_repeat: repeat
+background_repeat: no-repeat
 color: "#fff"
 hover_color: rgba(219,55,31,0.5)
 date: 2013-02-22 11:00
