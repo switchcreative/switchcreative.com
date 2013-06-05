@@ -3,16 +3,16 @@
 <!--[if gte IE 9]><!-->
 %html{ lang: "en" }
   <!--<![endif]-->
-  
+
   %head
     %meta(charset="utf-8")
     %title= [yield_content(:title), "switch"].reject(&:blank?).join(' | ')
-    
+
     -# koko wa general meta
     %meta{name: "description", content: "FIXME: APPLICATION DESCRIPTION"}
     %meta{name: "author", content: "Michael LaCroix, James LaCroix"}
     %meta{:'http-equiv' => "X-UA-Compatible", content: "chrome=1"}
-    
+
     -# koko wa fav and touch icons (reside in the /public folder), plus iOS meta
     / %link{rel: "shortcut icon", href: "#{root_url}/favicon.png"}
     / %link{rel: "apple-touch-icon", href: "#{root_url}/apple-touch-icon-57x57-precomposed.png"}
@@ -23,78 +23,56 @@
     %meta{name: "apple-mobile-web-app-capable", content: "yes"}
     %meta{name: "apple-mobile-web-app-status-bar-style", content:"black"}
 
-    -# koko wa HTML5 shim, for IE6-8 support of HTML elements
-    /[if lt IE 9]
-      = javascript_include_tag "html5"
-    
+    -# koko wa stylesheet
     = stylesheet_link_tag "application", media: "all"
+    -# koko wa javascript
+    = javascript_include_tag "application"
 
     -# koko wa CSS3 polyfill, IE6-8 support of CSS3 pseudo-classes with Selectivizr
     /[if lt IE 9]
       = javascript_include_tag "polyfills"
-    
+
     = javascript_include_tag "responsive"
-    
+
     -# koko wa Typekit
     %script{ type: "text/javascript", src: "//use.typekit.net/vnl0xfp.js" }
     :javascript
       try{Typekit.load();}catch(e){}
-  
-  
-  
-  
+
+    -# koko wa Google Analytics -- TODO: replace VVVVVVVV-V with the proper code
+    :javascript
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-VVVVVVVV-V']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    - unless development?
+      :javascript
+        var _gauges = _gauges || [];
+        (function() {
+          var t   = document.createElement('script');
+          t.type  = 'text/javascript';
+          t.async = true;
+          t.id    = 'gauges-tracker';
+          t.setAttribute('data-site-id', '51ae9d01613f5d461600001b');
+          t.src = '//secure.gaug.es/track.js';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(t, s);
+        })();
+
   %body
-    / /[if lt IE 9]
-    /   .wrap.outdated-browser
-    /     %div
-    /       %p
-    /         %a.close{ href: "#" } x
-    /         You are using an <strong>outdated</strong> browser. Please 
-    /         %a{ href: "http://browsehappy.com/", target: '_blank' } upgrade your browser or
-    /         %a{ href: "http://www.google.com/chromeframe/?redirect=true", target: '_blank' } activate Google Chrome Frame
-    /         to improve your experience.
-
-
     %header#l-header
       .l-constrained
         .header-logo
           = link_to "/" do
             = image_tag "logo.png", title: "switch", alt: "switch"
-      
-      
     = yield
-    
-    
-    %footer#l-footer
-    
-    
-    
 
-    
-    
-    
-    
-    -# koko wa javascript
-    = javascript_include_tag "application"
-    
-    
-    - unless development?
-      -# koko wa Google Analytics -- replace VVVVVVVV-V with the proper code
-      :javascript
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-VVVVVVVV-V']);
-        _gaq.push(['_trackPageview']);
-        
-        (function() {
-          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-
-
-
-    
-    
     -# koko wa Width Plugin
     - if development?
       #lacroix-browserwidth{style: "position:fixed; bottom:0; left:0; background:#555; color:#CCC; font-size:0.75em; padding:0.25em; text-shadow: 0 -1px 1px rgba(0,0,0,0.9); font-weight:normal;"}

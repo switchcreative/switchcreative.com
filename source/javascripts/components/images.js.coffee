@@ -1,7 +1,3 @@
-# Define Elements
-$header = $("#l-header")
-$asyncImages = $("[data-behavior='delayedImage']")
-
 # Spinner Options
 spinnerOpts =
   lines:   11 # The number of lines to draw
@@ -42,15 +38,14 @@ $.fn.asyncImageLoad = ->
               nextDocQueue()
         showHeader() if index is 0
 
-# Fade in header
-showHeader = ->
-  $header.delay(500).fadeIn(1700)
+jQuery ($) ->
+  # Define Elements
+  $header = $("#l-header")
+  $asyncImages = $("[data-behavior='delayedImage']")
 
-jQuery ->
   # Hide header, fade-in immediately
   # if there are no async images
-  $header.hide()
-  unless $asyncImages.length > 0
-    showHeader()
+  $header.hide().delay(500).fadeIn(1700)
+
   # Initialize async images
   $asyncImages.asyncImageLoad()
