@@ -3,7 +3,7 @@ pageable: true
 ---
 
 -# Portfolio
-%section#portfolio.l-portfolio
+%section#portfolio.l-portfolio.split
   - page_articles.select {|a| has_images(a.data) }.each do |article|
 
     %article.m-portfolio-preview{ id: "portfolio-#{article.data.slug}" }

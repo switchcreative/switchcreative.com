@@ -3,7 +3,21 @@
   @include outer-container;
   padding: 0 $page-gutter;
   margin: $page-gutter auto 0;
-}
+
+  @include media-ie($breakpoint-desktop) {
+
+    &.split {
+
+      .m-portfolio-preview {
+        float: left;
+        width: 50%;
+      }
+
+    } // &.split
+
+  } // @include media-ie($breakpoint-desktop)
+
+} // .l-portfolio
 
 // Portfolio Header
 .l-portfolio-header {
@@ -25,7 +39,7 @@
   @include media-ie($breakpoint-ipad) {
     margin-top: 3.5em;
     margin-bottom: 2.5em;
-    
+
     .m-portfolio-logo {
       @include span-columns(4);
       border-right: 3px solid $text-color;
