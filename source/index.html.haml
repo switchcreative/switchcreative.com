@@ -10,7 +10,7 @@ pageable: true
       = link_to article do
 
         .m-portfolio-image
-          = async_image image_path(featured_image(article.data))
+          = image_tag featured_image(article.data)
 
         .portfolio-preview-overlay{ style: ("background:#{article.data.hover_color};" if article.data.color) }
           %h1= article.data.title

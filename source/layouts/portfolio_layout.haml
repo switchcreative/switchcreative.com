@@ -41,7 +41,7 @@
     - if current_page.data.images && current_page.data.images.size > 0
       .m-portfolio-images
         - current_page.data.images.each do |img|
-          .m-portfolio-image= async_image image_path(portfolio_image(current_page.data, img))
+          .m-portfolio-image= image_tag portfolio_image(current_page.data, img)
 
     -# Pagination
     .l-pagination
