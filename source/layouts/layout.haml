@@ -66,11 +66,14 @@
         })();
 
   %body
-    %header#l-header
+    %header#header
       .l-constrained
         .header-logo
           = link_to "/" do
             = image_tag "logo.png", title: "switch", alt: "switch"
+        %ul.header-nav
+          %li= link_to "Contact", "/contact"
+
     = yield
 
     -# koko wa Width Plugin
