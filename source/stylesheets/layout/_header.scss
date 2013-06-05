@@ -6,7 +6,7 @@
   z-index: 10;
   width: 100%;
   background: transparent;
-  @include transition(background 0.2s ease-in-out);
+  @include transition(background 0.4s ease-in-out);
 
   .header-logo {
     float: left;
@@ -23,7 +23,7 @@
     font-size: 1.25em;
     font-weight: bold;
     text-transform: uppercase;
-    @include transition(all 0.2s ease-in-out);
+    @include transition(all 0.4s ease-in-out);
 
     li {
       display: inline-block;
